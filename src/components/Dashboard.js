@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // Fetch user data from the backend upon login
+    
     if (isLoggedIn) {
       fetchUserDetails();
     }
@@ -37,7 +37,7 @@ const Dashboard = () => {
   };
 
   const handleRegister = (email, password, mobileNumber,confirmPassword) => {
-    // Make a POST request to the backend to register the user
+    
     fetch('http://localhost:3001/api/register', {
       method: 'POST',
       headers: {
@@ -60,7 +60,7 @@ const Dashboard = () => {
   };
 
   const fetchUserDetails = () => {
-    // Make a GET request to the backend to fetch the user details
+    
     fetch('http://localhost:3001/api/user-details', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -76,7 +76,7 @@ const Dashboard = () => {
   };
 
   const handleLogout = () => {
-    // Clear the token from local storage and set isLoggedIn to false
+    
     localStorage.removeItem('token');
     setIsLoggedIn(false);
   };
